@@ -18,12 +18,27 @@
     <title>Vue Boolflix</title>
 </head>
 
-<body>
+<body class="debug">
 
     <div id="boolflix">
-        <input v-model="inputSearch" type="text">
-        <p>{{inputSearch}}</p>
-        <button @click="sendSearch(inputSearch)">cerca</button>
+        <div class="search_box">
+            <input v-model="inputSearch" type="text" v-on:keyup="sendSearch(inputSearch)">
+        </div>
+        <div class="movie_box">
+            <div v-for="movie in movieList" class="movie_item">
+
+                <div v-if="movie.title == movie.original_title">
+                    <h2>{{movie.title}}</h2>
+                </div>
+                <div v-else>
+                    <h2>{{movie.original_title}}</h2>
+                    <h2>{{movie.title}}</h2>
+                </div>
+
+                <h3>{{movie.original_language}}</h3>
+                <h3>{{movie.vote_average}}</h3>
+            </div>
+        </div>
 
     </div>
     <script src="js/main.js"></script>
