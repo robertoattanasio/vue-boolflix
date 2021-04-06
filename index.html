@@ -12,6 +12,9 @@
     <!-- VUE JS -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
     <!-- STYLESHEET CSS -->
     <link rel="stylesheet" href="css/styles.css">
 
@@ -36,7 +39,9 @@
                 </div>
 
                 <h3>{{movie.original_language}}</h3>
-                <h3>{{movie.vote_average}}</h3>
+                <h3>
+                    <i class="fas fa-star" v-for="stars in movie.vote_average"></i>
+                </h3>
             </div>
         </div>
 

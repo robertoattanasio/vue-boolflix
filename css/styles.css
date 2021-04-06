@@ -21,11 +21,13 @@ body {
 .movie_box {
     display: flex;
     flex-flow: row wrap;
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .movie_item {
     background-color: gray;
     flex: 0 0 calc(100% / 5);
     height: 400px;
+    padding: 20px;
 }
