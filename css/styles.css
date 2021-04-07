@@ -20,28 +20,34 @@ body {
 
 .movie_box {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    width: 80%;
+    flex-flow: row nowrap;
+    align-items: center;
+    width: 90%;
+    height: 450px;
     margin: 0 auto;
+    overflow-x: scroll;
+    white-space: nowrap;
+    border-bottom: 1px solid lightgrey;
+    box-shadow: 0 4px 5px lightgrey;
 }
 
 .movie_item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
     position: relative;
-    width: 300px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    flex-basis: 300px;
     height: 400px;
     margin: 10px;
-    background-color: gray;
-    border: 1px solid gray;
+    background-color: lightgrey;
+    border: 1px solid lightgrey;
     overflow: hidden;
-    box-shadow: 0 1px 1px gray;
+    box-shadow: 0 1px 3px lightgrey;
 }
 
 .movie_poster {
     position: relative;
+    cursor: pointer;
     z-index: 999;
     transition: 200ms;
 }
@@ -55,6 +61,8 @@ body {
 }
 
 .movie_info {
+    display: flex;
+    flex-flow: column nowrap;
     position: absolute;
     top: 0;
     left: 0;

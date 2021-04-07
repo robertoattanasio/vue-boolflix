@@ -32,7 +32,6 @@
         </div>
 
         <div class="movie_box">
-
             <div v-for="movie in movieList" class="movie_item">
                 <div v-if="movie.poster_path != null" class="movie_poster">
                     <img :src="'https://image.tmdb.org/t/p/w300/' + movie.poster_path" :alt="movie.original_title">
