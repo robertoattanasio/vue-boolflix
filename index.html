@@ -15,33 +15,45 @@
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
+    <!-- FLAGS -->
+    <link rel="stylesheet" href="css/flags/flags.css">
+
     <!-- STYLESHEET CSS -->
     <link rel="stylesheet" href="css/styles.css">
 
     <title>Vue Boolflix</title>
 </head>
 
-<body class="debug">
+<body class="">
 
     <div id="boolflix">
         <div class="search_box">
             <input v-model="inputSearch" type="text" v-on:keyup="sendSearch(inputSearch)">
         </div>
+
         <div class="movie_box">
+
             <div v-for="movie in movieList" class="movie_item">
-
-                <div v-if="movie.title == movie.original_title">
-                    <h2>{{movie.title}}</h2>
-                </div>
-                <div v-else>
-                    <h2>{{movie.original_title}}</h2>
-                    <h2>{{movie.title}}</h2>
+                <div v-if="movie.poster_path != null" class="movie_poster">
+                    <img :src="'https://image.tmdb.org/t/p/w300/' + movie.poster_path" :alt="movie.original_title">
                 </div>
 
-                <h3>{{movie.original_language}}</h3>
-                <h3>
-                    <i class="fas fa-star" v-for="stars in movie.vote_average"></i>
-                </h3>
+                <div class="movie_info">
+                    <div v-if="movie.title == movie.original_title">
+                        <h2>{{movie.title}}</h2>
+                    </div>
+                    <div v-else>
+                        <h2>{{movie.original_title}}</h2>
+                        <h2>{{movie.title}}</h2>
+                    </div>
+
+                    <div :class="'flag flag-' + movie.original_language"></div>
+
+                    <h3>
+                        <i class="fas fa-star" v-for="stars in movie.vote_average"></i>
+                        <i class="far fa-star" v-for="stars in (5 - movie.vote_average)"></i>
+                    </h3>
+                </div>
             </div>
         </div>
 

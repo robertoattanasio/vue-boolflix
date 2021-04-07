@@ -21,13 +21,44 @@ body {
 .movie_box {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
     width: 80%;
     margin: 0 auto;
 }
 
 .movie_item {
-    background-color: gray;
-    flex: 0 0 calc(100% / 5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 300px;
     height: 400px;
-    padding: 20px;
+    margin: 10px;
+    background-color: gray;
+    border: 1px solid gray;
+    overflow: hidden;
+    box-shadow: 0 1px 1px gray;
+}
+
+.movie_poster {
+    position: relative;
+    z-index: 999;
+    transition: 200ms;
+}
+
+.movie_poster img {
+    object-fit: cover;
+}
+
+.movie_poster:hover {
+    opacity: 0;
+}
+
+.movie_info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 300px;
+    height: 400px;
 }
