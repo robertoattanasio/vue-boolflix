@@ -8,27 +8,74 @@
     box-sizing: border-box;
 }
 
+ul {
+    list-style: none;
+}
+
+:root {
+    --dark-grey: #141414;
+    --light-grey: #d9d9d9;
+    --main-trans: 200ms;
+}
+
 body {
     width: 100%;
     height: 100vh;
+    background-color: var(--dark-grey);
+    color: white;
+    font-family: 'Roboto', sans-serif;
 }
 
-.search_box {
-    height: 100px;
+.navbar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    height: 70px;
     width: 100%;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--light-grey);
+}
+
+.nav_left_container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    margin-right: 40px;
+    height: 40%;
+}
+
+.nav_left_container li {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--light-grey);
+    margin-left: 15px;
+    transition: var(--main-trans);
+}
+
+.nav_left_container li:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.nav_right_container {
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .movie_box {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    width: 90%;
+    width: 100%;
     height: 450px;
-    margin: 0 auto;
+    margin: 20px 0 0 20px;
     overflow-x: scroll;
-    white-space: nowrap;
-    border-bottom: 1px solid lightgrey;
-    box-shadow: 0 4px 5px lightgrey;
+    /* border-bottom: 1px solid var(--light-grey); */
 }
 
 .movie_item {
@@ -37,32 +84,36 @@ body {
     flex-shrink: 0;
     flex-grow: 0;
     flex-basis: 300px;
-    height: 400px;
-    margin: 10px;
+    height: 450px;
+    margin-right: 5px;
     background-color: lightgrey;
-    border: 1px solid lightgrey;
     overflow: hidden;
-    box-shadow: 0 1px 3px lightgrey;
+}
+
+.movie_title {
+    width: 100%;
 }
 
 .movie_poster {
     position: relative;
-    cursor: pointer;
+    height: 100%;
     z-index: 999;
     transition: 200ms;
 }
 
 .movie_poster img {
-    object-fit: cover;
+    /* height: 100%; */
+    object-fit: contain;
 }
 
 .movie_poster:hover {
     opacity: 0;
+    cursor: pointer;
 }
 
 .movie_info {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     position: absolute;
     top: 0;
     left: 0;
