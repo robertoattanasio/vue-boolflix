@@ -68,8 +68,13 @@ body {
     height: 100%;
 }
 
+.nav_right_container .fa-search {
+    font-size: 18px;
+    color: var(--light-grey);
+    cursor: pointer;
+}
+
 .nav_right_container .fa-bell {
-    margin-left: 10px;
     font-size: 18px;
     color: var(--light-grey);
 }
@@ -79,6 +84,7 @@ body {
     font-size: 12px;
     font-weight: 400;
     width: 250px;
+    margin: 0 10px;
     padding: 5px 10px;
     color: var(--light-grey);
     outline-color: transparent;
@@ -100,7 +106,6 @@ body {
     align-items: center;
     width: calc(100% - 20px);
     height: 500px;
-    margin-top: 20px;
     margin-left: 20px;
     overflow-x: scroll;
 }

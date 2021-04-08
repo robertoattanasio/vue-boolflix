@@ -59,6 +59,7 @@ var app = new Vue({
             if (filterType == 'Film') {
                 this.movieList = this.movieList.filter(item => item.contentType == "Film");
             } else if (filterType == 'Serie TV') {
+
                 this.movieList = this.movieList.filter(item => item.contentType == "Serie TV");
 
             };

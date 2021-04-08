@@ -40,6 +40,8 @@
                 </ul>
             </div>
             <div class="nav_right_container">
+                <i class="fas fa-search" @click="sendSearch(inputSearch)"></i>
+
                 <input v-model="inputSearch" type="text" v-on:keyup="sendSearch(inputSearch)" placeholder="Digita un film o una serie TV">
                 <i class="fas fa-bell"></i>
             </div>
