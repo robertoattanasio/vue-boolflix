@@ -40,7 +40,8 @@
                 </ul>
             </div>
             <div class="nav_right_container">
-                <input v-model="inputSearch" type="text" v-on:keyup="sendSearch(inputSearch)">
+                <input v-model="inputSearch" type="text" v-on:keyup="sendSearch(inputSearch)" placeholder="Digita un film o una serie TV">
+                <i class="fas fa-bell"></i>
             </div>
         </div>
 
@@ -56,17 +57,21 @@
                     <div v-if="movie.title == movie.original_title" class="movie_title">
                         <h2>{{movie.title}}</h2>
                     </div>
-                    <div v-else>
+                    <div v-else class="movie_title">
                         <h2>{{movie.original_title}}</h2>
-                        <h2>{{movie.title}}</h2>
+                        <h4>{{movie.title}}</h4>
+                    </div>
+
+                    <div class="stars">
+                        <i class="fas fa-star" v-for="stars in movie.vote_average"></i><i class="far fa-star" v-for="stars in (5 - movie.vote_average)"></i>
+                    </div>
+
+                    <div class="overview">
+                        <p>{{movie.overview}}
+                        </p>
                     </div>
 
                     <div :class="'flag flag-' + movie.original_language"></div>
-
-                    <h3>
-                        <i class="fas fa-star" v-for="stars in movie.vote_average"></i>
-                        <i class="far fa-star" v-for="stars in (5 - movie.vote_average)"></i>
-                    </h3>
                 </div>
             </div>
         </div>

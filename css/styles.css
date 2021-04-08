@@ -15,6 +15,7 @@ ul {
 :root {
     --dark-grey: #141414;
     --light-grey: #d9d9d9;
+    --red: #c63531;
     --main-trans: 200ms;
 }
 
@@ -67,15 +68,41 @@ body {
     height: 100%;
 }
 
+.nav_right_container .fa-bell {
+    margin-left: 10px;
+    font-size: 18px;
+    color: var(--light-grey);
+}
+
+.nav_right_container input {
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 400;
+    width: 250px;
+    padding: 5px 10px;
+    color: var(--light-grey);
+    outline-color: transparent;
+    outline-width: 0;
+    outline-style: none;
+    background-color: transparent;
+    border: 1px solid var(--light-grey);
+}
+
+.nav_right_container input:focus {
+    outline-color: transparent;
+    outline-width: 0;
+    outline-style: none;
+}
+
 .movie_box {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    width: 100%;
-    height: 450px;
-    margin: 20px 0 0 20px;
+    width: calc(100% - 20px);
+    height: 500px;
+    margin-top: 20px;
+    margin-left: 20px;
     overflow-x: scroll;
-    /* border-bottom: 1px solid var(--light-grey); */
 }
 
 .movie_item {
@@ -86,12 +113,8 @@ body {
     flex-basis: 300px;
     height: 450px;
     margin-right: 5px;
-    background-color: lightgrey;
+    background-color: var(--light-grey);
     overflow: hidden;
-}
-
-.movie_title {
-    width: 100%;
 }
 
 .movie_poster {
@@ -99,25 +122,58 @@ body {
     height: 100%;
     z-index: 999;
     transition: 200ms;
+    cursor: pointer;
 }
 
 .movie_poster img {
-    /* height: 100%; */
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
 }
 
 .movie_poster:hover {
     opacity: 0;
-    cursor: pointer;
 }
 
 .movie_info {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
+    color: black;
     width: 300px;
-    height: 400px;
+    height: 450px;
+    padding: 10px;
+}
+
+.movie_title h2 {
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.movie_title h4 {
+    margin-top: 3px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.stars {
+    margin: 10px 0;
+    font-size: 10px;
+}
+
+.overview {
+    font-size: 10px;
+    height: 350px;
+    overflow: hidden;
+    text-align: justify;
+}
+
+.flag {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
 }
